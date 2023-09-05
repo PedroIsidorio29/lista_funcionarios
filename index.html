@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <script type="module"  src="./src/script/main.js" ></script>
+
+    <main>
+        <article>
+            <section>
+                <form id="form">
+                    <div class="input-label">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Informe seu Nome" data-required
+                            data-notNumber>
+                    </div>
+                    <div class="input-label">
+                        <label for="idade">Idade</label>
+                        <input type="text" name="idade" id="idade" placeholder="Informe sua Idade" data-required
+                            data-isNumber data-minValue="18" data-maxValue="70">
+                    </div>
+                    <div class="input-label">
+                        <label for="cargo">Cargo</label>
+                        <input type="text" name="cargo" id="cargo" placeholder="Informe seu Cargo" data-required
+                            data-notNumber>
+                    </div>
+                    <div class="input-label">
+                        <label for="departamento">Departamento</label>
+                        <input type="text" name="departamento" id="departamento" placeholder="Informe seu Departamento"
+                            data-required data-notNumber>
+                    </div>
+                    <div class="input-label">
+                        <label for="linguagem">Linguagem</label>
+                        <input type="text" name="linguagem" id="linguagem" placeholder="Informe a Lingu agem"
+                            data-required data-notNumber>
+                    </div>
+                    <div class="submit full-box">
+                        <input type="submit" id="submit" value="Adicionar funcionario">
+                    </div>
+                </form>
+            </section>
+            <p class="error-validation tamplate"/>
+        </article>
+    </main>
+
+    <script type="module" src="./src/script/main.js"></script>
 </body>
+
 </html>
