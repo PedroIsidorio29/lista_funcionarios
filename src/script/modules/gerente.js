@@ -9,6 +9,6 @@ export class Gerente extends Funcionario{
     }
 
     gerenciar(){
-        
+        return `Gerencio o departameto de ${this.departamento}` 
     }
 }

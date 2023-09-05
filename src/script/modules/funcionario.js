@@ -11,8 +11,10 @@ export class Funcionario {
     };
 
     seApresentar() {
+        return `Prazer em te conhecer me chamo ${this.nome} tenho ${this.idade} e irei trabalhar no cargo de ${this.cargo}.`
     };
-
+    
     trabalhar() {
+        return `Agora irei atuar nos meus afazeres de ${this.cargo}.`
     };
 }
