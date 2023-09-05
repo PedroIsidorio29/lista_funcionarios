@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/toggle.css">
 </head>
 
 <body>
-
     <main>
         <article>
             <section>
-                <form id="form">
+                <form id="form" class="form">
+
                     <div class="input-label">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Informe seu Nome" data-required
@@ -28,6 +30,16 @@
                         <input type="text" name="cargo" id="cargo" placeholder="Informe seu Cargo" data-required
                             data-notNumber>
                     </div>
+
+                    <div class="input-toggle">
+                        <p> Selecione o tipo de Funcionario:</p>
+                        <div class="toggle">
+                            <input type="checkbox" id="foo" >
+                            <label for="foo" />
+                        </div>
+                        <p class="funcionario_label">Desenvolvedor</p>
+                    </div>
+
                     <div class="input-label">
                         <label for="departamento">Departamento</label>
                         <input type="text" name="departamento" id="departamento" placeholder="Informe seu Departamento"
@@ -35,15 +47,21 @@
                     </div>
                     <div class="input-label">
                         <label for="linguagem">Linguagem</label>
-                        <input type="text" name="linguagem" id="linguagem" placeholder="Informe a Lingu agem"
+                        <input type="text" name="linguagem" id="linguagem" placeholder="Informe a Linguagem"
                             data-required data-notNumber>
                     </div>
-                    <div class="submit full-box">
-                        <input type="submit" id="submit" value="Adicionar funcionario">
+                    <div>
+                        <input type="submit" id="submit" value="Add funcionario">
                     </div>
                 </form>
+
             </section>
-            <p class="error-validation tamplate"/>
+            <p class="error-validation tamplate" />
+        </article>
+
+        <article>
+            <section>
+            </section>
         </article>
     </main>
 

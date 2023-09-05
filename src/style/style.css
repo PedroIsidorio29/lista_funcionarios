@@ -1,0 +1,43 @@
+.error-validation {
+    color: #FF1A1A;
+    /* position: absolute;
+    top:57px;  */
+    font-size: .8rem;
+}
+
+input[type="submit"] {
+    background-color: #0c6baf;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 1.5%;
+}
+
+section {
+    padding-top: 5vh;
+    border-radius: 10px;
+    padding: 25px;
+    background-color: #86b2f3a2;
+}
+
+input {
+    width: 97%;
+    background-color: transparent;
+    border-bottom: 2px solid #000;
+    padding: 10px;
+}
+
+.input-label{
+    margin-bottom: 10px;
+}
+
+.input-toggle{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form{
+    display: grid;
+}
