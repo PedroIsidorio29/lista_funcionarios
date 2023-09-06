@@ -4,7 +4,7 @@ export class Validation {
     valid;
     validations;
 
-    constructor() {
+    constructor(_isGerente) {
         this.validations = [
             "data-required",
             "data-notNumber",
@@ -13,6 +13,7 @@ export class Validation {
             "data-maxValue",
         ];
         this.valid = true;
+        this.isGerente = _isGerente
     }
 
     validate(form) {
@@ -27,6 +28,13 @@ export class Validation {
 
                 if (attributeVal != null) {
                     const method = val.replace('data-', '')
+
+console.log(this.isGerente&&input.name==="departamento")
+console.log(input.name==="departamento")
+console.log(this.isGerente)
+console.log('______________')
+// console.log(!(this.isGerente))
+if(!(this.isGerente&&input.name==="departamento"))
                     this[method](input, attributeVal)
                 }
             })

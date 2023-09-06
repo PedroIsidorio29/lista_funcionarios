@@ -1,4 +1,4 @@
-import { Funcionario } from "./funcionario";
+import { Funcionario } from "./funcionario.js";
 
 export class Desenvolvedor extends Funcionario {
     linguagem;

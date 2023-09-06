@@ -17,4 +17,4 @@ export class Funcionario {
     trabalhar() {
         return `Agora irei atuar nos meus afazeres de ${this.cargo}.`
     };
-}
+ }
