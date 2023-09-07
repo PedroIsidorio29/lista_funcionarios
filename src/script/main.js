@@ -15,13 +15,14 @@ submit.addEventListener('click', (e) => {
 
 function setFuncionarioList(valid) {
     const inputsArray = [...form.getElementsByTagName('input')];
+    console.log( departamento)
+    const funcionario = { nome: nome.value, idade, cargo }
 
-    const funcionario = { nome, idade, cargo }
-
-    inputsArray.forEach((i) => {
+    /* inputsArray.forEach((i) => {
         console.log(i.name)
         console.log(i.value)
-    })
+    }) */
+    console.log(funcionario)
     // if (valid.isGerente)
     //     console.log('asda')
     // const asd = new Gerente()
