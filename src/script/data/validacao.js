@@ -1,4 +1,4 @@
-const rex = /^[A-Z a-z]+$/
+const rex = /[a-zA-Z\u00C0-\u00FF ]+/i
 
 export class Validation {
     valid;
