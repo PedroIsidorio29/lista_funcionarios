@@ -5,13 +5,13 @@ import { Validation } from "./data/validacao.js";
 const form = document.getElementById("form");
 const submit = document.getElementById("submit");
 const toggle = document.querySelector('#foo');
-// const funcionariosList = []
 
 submit.addEventListener('click', (e) => {
     const validator = new Validation(toggle.checked)
     e.preventDefault();
     validator.validate(form);
-    if (validator.valid) setFuncionarioList(validator);
+    if (validator.valid) 
+    setFuncionarioList(validator);
 });
 
 function setFuncionarioList(valid) {
@@ -73,6 +73,9 @@ function setFuncionarioList(valid) {
         cell6.appendChild(trabalharBtn);
         cell6.appendChild(acaoClassBtn);
     }
+
+    const input = document.querySelectorAll('form input');
+    input.forEach(i => i.value = '')
 }
 
 toggle.addEventListener('click', () => {
