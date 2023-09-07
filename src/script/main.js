@@ -5,6 +5,7 @@ import { Validation } from "./data/validacao.js";
 const form = document.getElementById("form");
 const submit = document.getElementById("submit");
 const toggle = document.querySelector('#foo');
+// const funcionariosList = []
 
 submit.addEventListener('click', (e) => {
     const validator = new Validation(toggle.checked)
@@ -14,18 +15,64 @@ submit.addEventListener('click', (e) => {
 });
 
 function setFuncionarioList(valid) {
-    const inputsArray = [...form.getElementsByTagName('input')];
-    console.log( departamento)
-    const funcionario = { nome: nome.value, idade, cargo }
+    const funcionario = {
+        _nome: nome.value,
+        _idade: idade.value,
+        _cargo: cargo.value
+    }
 
-    /* inputsArray.forEach((i) => {
-        console.log(i.name)
-        console.log(i.value)
-    }) */
-    console.log(funcionario)
-    // if (valid.isGerente)
-    //     console.log('asda')
-    // const asd = new Gerente()
+    const apresentarBtn = document.createElement('button')
+    const apresentarTxt = document.createTextNode('Se Apresente')
+    const trabalharBtn = document.createElement('button')
+    const trabalharTxt = document.createTextNode('Trabalhar')
+    const acaoClassBtn = document.createElement('button')
+    const acaoClassTxt = document.createTextNode('Ação')
+
+    apresentarBtn.appendChild(apresentarTxt)
+    trabalharBtn.appendChild(trabalharTxt)
+    acaoClassBtn.appendChild(acaoClassTxt)
+
+    const table = document.getElementById("tabela");
+    const newRow = table.insertRow()
+
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2);
+    const cell4 = newRow.insertCell(3);
+    const cell5 = newRow.insertCell(4);
+    const cell6 = newRow.insertCell(5);
+
+
+    if (valid.isGerente) {
+        const gerente = new Gerente(departamento.value, { ...funcionario })
+
+        trabalharBtn.addEventListener('click', () => window.alert(gerente.trabalhar()))
+        apresentarBtn.addEventListener('click', () => window.alert(gerente.seApresentar()))
+        acaoClassBtn.addEventListener('click', () => window.alert(gerente.gerenciar()))
+
+        cell1.innerHTML = gerente.nome;
+        cell2.innerHTML = gerente.idade;
+        cell3.innerHTML = gerente.cargo;
+        cell5.innerHTML = gerente.departamento;
+        cell6.appendChild(apresentarBtn);
+        cell6.appendChild(trabalharBtn);
+        cell6.appendChild(acaoClassBtn);
+    }
+    else {
+        const dev = new Desenvolvedor(linguagem.value, { ...funcionario })
+
+        trabalharBtn.addEventListener('click', () => window.alert(dev.trabalhar()))
+        apresentarBtn.addEventListener('click', () => window.alert(dev.seApresentar()))
+        acaoClassBtn.addEventListener('click', () => window.alert(dev.programar()))
+
+        cell1.innerHTML = dev.nome;
+        cell2.innerHTML = dev.idade;
+        cell3.innerHTML = dev.cargo;
+        cell4.innerHTML = dev.linguagem;
+        cell6.appendChild(apresentarBtn);
+        cell6.appendChild(trabalharBtn);
+        cell6.appendChild(acaoClassBtn);
+    }
 }
 
 toggle.addEventListener('click', () => {
