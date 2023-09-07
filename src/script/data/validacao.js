@@ -18,7 +18,7 @@ export class Validation {
 
     validate(form) {
         const validacoes_atuais = document.querySelectorAll('form .error-validation');
-        if (validacoes_atuais.length > 0) this.limpar_validations(validacoes_atuais)
+        if (validacoes_atuais.length) this.limpar_validations(validacoes_atuais)
 
         const inputsArray = [...form.getElementsByTagName('input')];
 
@@ -29,13 +29,14 @@ export class Validation {
                 if (attributeVal != null) {
                     const method = val.replace('data-', '')
 
-console.log(this.isGerente&&input.name==="departamento")
-console.log(input.name==="departamento")
-console.log(this.isGerente)
-console.log('______________')
-// console.log(!(this.isGerente))
-if(!(this.isGerente&&input.name==="departamento"))
-                    this[method](input, attributeVal)
+                    if (input.name !== "departamento" && input.name !== "linguagem")
+                        this[method](input, attributeVal)
+
+                    if (input.name === "departamento" && this.isGerente)
+                        this[method](input, attributeVal)
+
+                    if (input.name === "linguagem" && !this.isGerente)
+                        this[method](input, attributeVal)
                 }
             })
         })
